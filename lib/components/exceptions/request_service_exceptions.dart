@@ -1,0 +1,1 @@
+class TimeOutException implements Exception {}
