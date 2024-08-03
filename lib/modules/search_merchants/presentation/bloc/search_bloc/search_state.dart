@@ -1,13 +1,13 @@
-import 'package:equatable/equatable.dart';
-
-import '../../../data/models/merchat.dart';
+part of 'search_bloc.dart';
 
 class SearchState extends Equatable {
   final List<Merchat>? searchResult;
+  final List<FavoriteMerchant>? favoriteMerchants;
   final bool? isLoadingListOfSearch;
 
   const SearchState({
     this.searchResult,
+    this.favoriteMerchants,
     this.isLoadingListOfSearch,
   });
 
@@ -16,11 +16,12 @@ class SearchState extends Equatable {
 
   SearchState copyWith({
     List<Merchat>? searchResult,
+    List<FavoriteMerchant>? favoriteMerchants,
     bool? isLoadingListOfSearch,
   }) =>
       SearchState(
         searchResult: searchResult ?? this.searchResult,
-        isLoadingListOfSearch:
-            isLoadingListOfSearch ?? this.isLoadingListOfSearch,
+        favoriteMerchants: favoriteMerchants ?? this.favoriteMerchants,
+        isLoadingListOfSearch:isLoadingListOfSearch ?? this.isLoadingListOfSearch,
       );
 }

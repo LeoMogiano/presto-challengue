@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'search_bloc.dart';
 
 abstract class SearchEvent extends Equatable {
   @override
@@ -6,9 +6,15 @@ abstract class SearchEvent extends Equatable {
 }
 
 class OnSearchMerchat extends SearchEvent {
-  final String _term;
+  final String term;
 
-  OnSearchMerchat({
-    required String termn,
-  }) : _term = termn;
+  OnSearchMerchat({required this.term});
+}
+
+class OnSearchFavoriteMerchat extends SearchEvent {}
+
+class OnAddFavoriteMerchat extends SearchEvent {
+  final String id;
+
+  OnAddFavoriteMerchat({required this.id});
 }

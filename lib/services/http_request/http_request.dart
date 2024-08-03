@@ -7,5 +7,7 @@ abstract class HttpService {
 
   Future<Response> post({
     required Uri uri,
+    String? body,
+    Map<String, String>? headers,
   });
 }
